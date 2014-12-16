@@ -18,26 +18,24 @@ body {
   width:800px;
 }
 
-.left {
+.left, .right {
   top:140px;
-  left:80px;
   width: 0;
   height: 0;
 
   border-top   : 60px solid transparent;
-  border-right  : 60px solid #504040;
   border-bottom : 60px solid transparent;
+    
+  cursor: pointer;
+}
+.left {
+  left:80px;
+  border-right  : 60px solid #504040;
 }
 
 .right {
-  top:140px;
   left:660px;
-  width: 0;
-  height: 0;
-
-  border-top: 60px solid transparent;
   border-left: 60px solid #504040;
-  border-bottom : 60px solid transparent;
 }
 
 .left img, .right img{
@@ -53,7 +51,7 @@ body {
   height: 400px;
   width: 400px;
   border-radius: 200px;
-  border: 10px solid #504040;
+  border: 10.5px solid #504040;
 }
 
 .images {
@@ -67,9 +65,7 @@ body {
   background-color:black;
 }
 
-.title {
-  transition: top 0.5s linear, font-size 0.5s linear, color 0.5s;
-  
+.title {  
   -webkit-transition: top 0.5s;
   transition: top 0.5s;
   
@@ -122,6 +118,8 @@ body {
   font-family:'Doppio One', 'serif';
   font-size: 30px;
   text-align:center;
+  
+  cursor: pointer;
 }
 
 .flip_disappaer {
