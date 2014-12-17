@@ -1,5 +1,6 @@
-// Copyright (c) 2014, <your name>. All rights reserved. Use of this source code
+// Copyright (c) 2014, Abby Yeh. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
+
 import 'dart:html';
 import 'dart:async';
 
@@ -25,9 +26,11 @@ void initMain() {
   int height = window.innerHeight;
   int width = window.innerWidth;
   Element mainElement = querySelector('.main')
-      ..style.top = px((height - 400)~/2)
-      ..style.left = px((width - 800)~/2);
+      ..style.top = px((height - 400) ~/ 2)
+      ..style.left = px((width - 800) ~/ 2)
+      ..classes.remove('disappear');
 }
+
 void initEvent() { 
   querySelector('.left').onClick.listen((_) {
     flipLeft();
@@ -44,7 +47,11 @@ void initEvent() {
   
   //init url replacement
   querySelector('.goto').onClick.listen((_) {
-    window.location.replace(nowPage == 0? url: nowPage == 1? game1: game2);
+    AnchorElement link = querySelector('.link');
+    link
+      ..href = nowPage == 0? url: nowPage == 1? game1: game2
+      ..click();
+//    window.location.replace(nowPage == 0? url: nowPage == 1? game1: game2);
   });
 }
 
